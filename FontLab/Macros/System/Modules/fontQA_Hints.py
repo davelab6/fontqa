@@ -99,7 +99,7 @@ class HHintBBox(GlyphTest):
         if result == None:
           result = []
         myBBox = trueBBox(anyGlyph)
-        myRange = xrange(myBBox.ll.y, myBBox.ur.y + 1)
+        myRange = xrange(int(myBBox.ll.y), int(myBBox.ur.y + 1))
         for anyHHint in anyGlyph.hhints:
           if anyHHint.position not in myRange or anyHHint.position + anyHHint.width not in myRange:
             result.append('%s: (p=%s, w=%s)' % (anyGlyph.name, anyHHint.position, anyHHint.width))
@@ -124,7 +124,7 @@ class VHintBBox(GlyphTest):
         if result == None:
           result = []
         myBBox = trueBBox(anyGlyph)
-        myRange = xrange(myBBox.ll.x, myBBox.ur.x + 1)
+        myRange = xrange(int(myBBox.ll.x), int(myBBox.ur.x + 1))
         for anyVHint in anyGlyph.vhints:
           if anyVHint.position not in myRange or anyVHint.position + anyVHint.width not in myRange:
             result.append('%s: (p=%s, w=%s)' % (anyGlyph.name, anyVHint.position, anyVHint.width))
